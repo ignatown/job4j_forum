@@ -11,7 +11,7 @@ import ru.job4j.forum.service.UserService;
 @Controller
 @SessionAttributes(value = "username")
 public class LoginControl {
-    UserService userService;
+    private final UserService userService;
 
     public LoginControl(UserService userService) {
         this.userService = userService;

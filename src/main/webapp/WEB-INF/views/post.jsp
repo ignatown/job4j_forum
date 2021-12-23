@@ -19,7 +19,7 @@
         <h4>Post job4j</h4>
     </div>
     <div class="row">
-       <h5>Post name: ${post.id}</h5>
+       <h5>Post name: ${post.name}</h5>
     </div>
     <div class="row">
        <h6>Post desc: ${post.description}</h6>
