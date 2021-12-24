@@ -19,7 +19,8 @@
         <h4>Форум job4j</h4>
     </div>
     <div class="row">
-        <a href="/edit?id=0" class="btn btn-dark" role="button">New post by ${username}</a>
+        <a href="/edit?id=0" class="btn btn-dark" role="button">New post</a>
+        <a href="/logout" class="btn btn-dark" role="button">Logout <b>${user.username}</b></a>
         <table class="table">
             <thead class="thead-dark">
             <tr>

@@ -5,24 +5,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.forum.model.Post;
 import ru.job4j.forum.service.PostService;
-import ru.job4j.forum.service.UserService;
 
 @Controller
 public class EditControl {
     private final PostService postService;
-    private final UserService userService;
 
-    public EditControl(PostService postService, UserService userService) {
+    public EditControl(PostService postService) {
         this.postService = postService;
-        this.userService = userService;
     }
 
     @GetMapping("/edit")
     public String getEdit(@RequestParam(value = "id", required = false) int id,
                            Model model) {
-            Post post = postService.getById(id);
-            model.addAttribute("post", post);
-            return "edit";
+          Post post = Post.of("");
+          if (id != 0) {
+            post = postService.getById(id);
+          }
+          model.addAttribute("post", post);
+          return "edit";
     }
 
     @PostMapping("/edit")

@@ -20,6 +20,11 @@
     </div>
     <a href="/reg" class="btn btn-dark" role="button">Registration</a>
     <form name='login' action="<c:url value='/login'/>" method='POST'>
+        <c:if test="${not empty errorMessge}">
+            <div style="color:red; font-weight: bold; margin: 30px 0px;">
+                    ${errorMessge}
+            </div>
+        </c:if>
         <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" class="form-control" id="username" name="username">

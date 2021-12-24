@@ -12,12 +12,6 @@ public class UserService {
     private final List<User> users = new ArrayList<>();
     private AtomicInteger id = new AtomicInteger(2);
 
-    public UserService() {
-        User user = User.of("root", "root");
-        user.setId(1);
-        users.add(user);
-    }
-
     public boolean addUser(User user) {
         if (findUserByName(user.getUsername()) == null) {
             user.setId(id.getAndIncrement());
