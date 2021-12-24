@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class UserService {
     private final List<User> users = new ArrayList<>();
-    AtomicInteger id = new AtomicInteger(2);
+    private AtomicInteger id = new AtomicInteger(2);
 
     public UserService() {
         User user = User.of("root", "root");
