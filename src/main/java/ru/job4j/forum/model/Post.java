@@ -1,17 +1,24 @@
 package ru.job4j.forum.model;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name = "posts")
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
     private Timestamp created = Timestamp.valueOf(LocalDateTime.now());
-    private List<String> comments = new ArrayList<>();
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "posts_id")
+    private List<Comment> comments = new ArrayList<>();
 
     public static Post of(String name) {
         Post post = new Post();
@@ -19,16 +26,16 @@ public class Post {
         return post;
     }
 
-    public List<String> getComments() {
+    public List<Comment> getComments() {
         return comments;
     }
 
-    public void setComments(List<String> comments) {
+    public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
 
-    public void addComm(String str) {
-        comments.add(str);
+    public void addComm(Comment comment) {
+        comments.add(comment);
     }
 
     public int getId() {

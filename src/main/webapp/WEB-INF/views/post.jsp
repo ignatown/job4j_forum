@@ -26,7 +26,7 @@
     </div>
     <div class="row">
         <c:forEach items="${post.comments}" var="com">
-            <td>${com}</td> <br>
+            <td>${com.body}</td> <br>
         </c:forEach>
     </div>
 
@@ -36,7 +36,6 @@
             <label for="comment">comment:</label>
             <input type="text" class="form-control" id="comment" name="comment">
         </div>
-
         <button type="submit" class="btn btn-success">Add comment</button>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     </form>

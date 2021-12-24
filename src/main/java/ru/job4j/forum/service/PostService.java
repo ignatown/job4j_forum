@@ -1,45 +1,40 @@
 package ru.job4j.forum.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import ru.job4j.forum.model.Comment;
 import ru.job4j.forum.model.Post;
+import ru.job4j.forum.store.PostRepository;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public class PostService {
 
-    private final Map<Integer, Post> posts = new HashMap<>();
-    AtomicInteger postId = new AtomicInteger(2);
+    private final PostRepository posts;
 
-    public PostService() {
-        Post post = Post.of("Продаю машину ладу 01.");
-        post.setId(1);
-        posts.put(1, post);
+    public PostService(PostRepository posts) {
+        this.posts = posts;
     }
 
     public Collection<Post> getAll() {
-        return posts.values();
+        List<Post> rsl = new ArrayList<>();
+        posts.findAll().forEach(rsl::add);
+        return rsl;
     }
 
-    public Post getById(int id) {
-        return posts.get(id);
+    public Post getById(Integer id) {
+        return getAll().stream().filter(p -> p.getId() == id).findFirst().get();
     }
 
     public void addPost(Post post) {
-            if (post.getId() == 0) {
-                post.setId(postId.getAndIncrement());
-            }
-            posts.put(post.getId(), post);
+           posts.save(post);
     }
 
-    public Post findPostByName(String name) {
-        Post post = null;
-        for (Post p: getAll()) {
-            if (p.getName().equals(name)) {
-                post = p;
-            }
-        }
-        return post;
+    @Transactional
+    public void addCommentToPost(int postId, String comment) {
+        Post post = getById(postId);
+        post.addComm(Comment.of(comment));
+        posts.save(post);
     }
 }
