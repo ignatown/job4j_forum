@@ -29,4 +29,14 @@ public class RegControlTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("reg"));
     }
+
+    @Test
+    @WithMockUser
+    public void shouldReturnDefaultMessageRegNewUser() throws Exception {
+        this.mockMvc.perform(get("/reg")
+        .param("username", "root")
+        .param("password", "root"))
+                .andDo(print())
+                .andExpect(status().is2xxSuccessful());
+    }
 }
