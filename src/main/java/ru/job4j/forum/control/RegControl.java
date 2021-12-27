@@ -26,7 +26,7 @@ public class RegControl {
 
     @PostMapping("/reg")
     public String regSave(@ModelAttribute User user) {
-        if (users.findAllByUsername(user.getUsername()).size() == 0) {
+        if (!users.existsUserByUsername(user.getUsername())) {
             user.setEnabled(true);
             user.setPassword(encoder.encode(user.getPassword()));
             user.setAuthority(authorities.findByAuthority("ROLE_USER"));
