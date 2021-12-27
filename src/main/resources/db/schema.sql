@@ -17,3 +17,9 @@ CREATE TABLE IF NOT EXISTS users (
                        enabled boolean default true,
                        authority_id int not null references authorities(id)
 );
+
+CREATE TABLE IF NOT EXISTS comment (
+                                     id serial primary key,
+                                     body varchar(2000),
+                                     posts_id int not null references posts(id)
+);
