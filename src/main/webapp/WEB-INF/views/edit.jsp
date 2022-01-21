@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Edit job4j</title>
+    <title>Edit FORUM</title>
 </head>
 <body>
 <div class="container mt-3">
     <div class="row">
-        <h4>Edit job4j</h4>
+        <h4>Edit FORUM</h4>
     </div>
 
     <form name='login' action="<c:url value='/edit'/>" method='POST'>

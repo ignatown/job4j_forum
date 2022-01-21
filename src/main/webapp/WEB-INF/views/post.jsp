@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Post job4j</title>
+    <title>Post ${post.name}</title>
 </head>
 <body>
 <div class="container mt-3">
     <div class="row">
-        <h4>Post job4j</h4>
+        <h4>Post ${post.id}</h4>
     </div>
     <div class="row">
        <h5>Post name: ${post.name}</h5>

@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Login job4j</title>
+        <title>Login FORUM</title>
 </head>
 <body>
 <div class="container mt-3">
     <div class="row">
-        <h4>Login job4j</h4>
+        <h4>Login FORUM</h4>
     </div>
     <a href="/reg" class="btn btn-dark" role="button">Registration</a>
     <form name='login' action="<c:url value='/login'/>" method='POST'>

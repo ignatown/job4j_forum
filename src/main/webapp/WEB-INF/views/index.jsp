@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Форум job4j</title>
+    <title>FORUM</title>
 </head>
 <body>
 <div class="container mt-3">
     <div class="row">
-        <h4>Форум job4j</h4>
+        <h4>FORUM</h4>
     </div>
     <div class="row">
         <a href="/edit?id=0" class="btn btn-dark" role="button">New post</a>

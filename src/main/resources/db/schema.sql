@@ -21,5 +21,5 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS comment (
                                      id serial primary key,
                                      body varchar(2000),
-                                     posts_id int not null references posts(id)
+                                     posts_id int references posts(id)
 );
