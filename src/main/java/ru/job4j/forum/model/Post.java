@@ -15,6 +15,7 @@ public class Post {
     private int id;
     private String name;
     private String description;
+    private String authorName;
     private Timestamp created = Timestamp.valueOf(LocalDateTime.now());
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "posts_id")
@@ -36,6 +37,14 @@ public class Post {
 
     public void addComm(Comment comment) {
         comments.add(comment);
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
     public int getId() {

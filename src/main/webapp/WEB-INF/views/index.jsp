@@ -25,6 +25,7 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col">id</th>
+                <th scope="col">author</th>
                 <th scope="col">name</th>
                 <th scope="col">created</th>
                 <th scope="col"></th>
@@ -34,6 +35,7 @@
             <c:forEach items="${posts}" var="post">
             <tr>
                 <th scope="row">${post.id}</th>
+                <th scope="row">${post.authorName}</th>
                 <td><a href="<c:out value="/post?id=${post.id}"/>">${post.name}</a></td>
                 <td>${post.created}</td>
                 <td><a href="<c:out value="/edit?id=${post.id}"/>">edit</a></td>

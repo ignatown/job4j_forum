@@ -1,5 +1,6 @@
 package ru.job4j.forum.control;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ public class PostControl {
     @PostMapping("addComment")
     public String addComment(@RequestParam(value = "id", required = false) int id,
                              @ModelAttribute("comment") String comment) {
+        comment = "[" + SecurityContextHolder.getContext().getAuthentication().getName() + "]: " + comment;
         postService.addCommentToPost(id, comment);
         return "redirect:/post?id=" + id;
     }

@@ -16,7 +16,10 @@
 <body>
 <div class="container mt-3">
     <div class="row">
-        <h4>Post ${post.id}</h4>
+        <h4>Post №${post.id}</h4>
+    </div>
+    <div class="row">
+        <h4>Author: ${post.authorName}</h4>
     </div>
     <div class="row">
        <h5>Post name: ${post.name}</h5>

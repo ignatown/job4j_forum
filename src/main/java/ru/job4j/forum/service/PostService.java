@@ -28,7 +28,8 @@ public class PostService {
     }
 
     public void addPost(Post post) {
-           posts.save(post);
+        post.setName(post.getName());
+        posts.save(post);
     }
 
     @Transactional
