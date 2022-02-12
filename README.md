@@ -1,16 +1,18 @@
-#job4j_forum
-Приложение - форум.
-HEROKU LINK: https://fathomless-dawn-11480.herokuapp.com/
+## Forum
+
+Классическое приложение - форум. [Посмотреть на HEROKU](https://fathomless-dawn-11480.herokuapp.com/)
 
 Использоване при разработке технологии:
 
-◉ Java 11
-◉ Spring Boot
-◉ Spring Data JPA
-◉ Spring Security
-◉ Liquibase
-◉ PostgreSQL
-◉ Maven
+- Java 11
+- Spring Boot
+- Spring Data JPA
+- Spring Security
+- Liquibase
+- PostgreSQL
+- Maven
+
+***
 
 Вначале пользователю необходимо зарегистрироваться:
 
